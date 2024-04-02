@@ -33,7 +33,7 @@ const ImageMiddleware = async (req, res) => {
         }
       };
   
-      const response = await axios.post('https://us-central1-aiplatform.googleapis.com/v1/projects/454074013737/locations/us-central1/endpoints/5972892408730353664:predict', requestBody, {
+      const response = await axios.post(process.env.PREDICT_URL, requestBody, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
